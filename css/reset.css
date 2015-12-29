@@ -1,0 +1,194 @@
+@charset "utf-8";
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea {
+    /* for ie */
+    /* font: 14px/1 Tahoma, Helvetica, Arial, "微软雅黑", sans-serif; */
+    font: 14px/1 Tahoma, Helvetica, Arial, "\5FAE\8F6F\96C5\9ED1", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+
+h1, h2, h3, h4, h5, h6, {
+    font-weight: normal;
+    font-size: 100%;
+    line-height: 150%;
+}
+
+address, cite, dfn, em, var, i {
+    font-style: normal;
+}
+
+/* 将斜体扶正 */
+code, kbd, pre, samp, tt {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* 统一等宽字体 */
+small {
+    font-size: 12px;
+}
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol {
+    list-style: none;
+}
+
+abbr[title], acronym[title] {
+    /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+/* 重置表单元素 */
+legend {
+    color: #000;
+}
+
+/* for ie6 */
+fieldset, img {
+    border: none;
+}
+
+/* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    height: 1px;
+    border: none;
+}
+
+/*清浮动*/
+.clear {
+    display: block;
+    *zoom: 1;
+}
+
+.clear:after {
+    clear: both;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    content: "";
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html {
+    overflow-y: scroll;
+}
+
+/*火狐input 按钮垂直居中*/
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    padding: 0;
+    border: none;
+}
+
+/* 输入控件字体 */
+input, button, textarea, select, optgroup, option {
+    font-weight: inherit;
+    font-style: inherit;
+    /* font-size:inherit; */
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* 清除特殊标记的字体和字号 */
+address, caption, cite, code, dfn, em, strong, th, var {
+    　　font-weight: normal;
+    　　font-style: normal;
+}
+
+/* 设置表格的边框被合并为一个单一的边框, 指定分隔边框模型中单元格边界之间的距离为0*/
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    　border-spacing: 0;
+}
+
+/* 表格标题及内容居左显示 */
+caption, th {
+    text-align: left;
+}
+
+input, select, textarea {
+    float: left;
+    outline: none;
+    vertical-align: middle;
+}
+
+/*让IE6的eval不颤抖*/
+body {
+    _background-image: url(about:blank);
+    _background-attachment: fixed;
+}
+
+/*让文本框聚焦没有黄色边框,且不能改变大小*/
+input, textarea {
+    outline: none;
+    border: 1px #c5c5c5 solid;
+    font-size: 100%;
+    resize: none;
+}
+
+/*让em不是斜体*/
+em {
+    font-style: normal;
+}
+
+input[type=button] {
+    cursor: pointer;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+/*去项目标点*/
+ol, ul {
+    list-style: none;
+}
+
+/*让文字换行,且单词断词*/
+p {
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/*让图片没有边框,垂直居中(解决图片有下间隙问题)*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+
+

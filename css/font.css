@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+a:link {
+}
+
+/* 未被访问的链接 */
+a:visited {
+}
+
+/* 已被访问的链接 */
+a:hover {
+}
+
+/* 鼠标指针移动到链接上 */
+a:active {
+}
+
+/* 正在被点击的链接 */
+a:focus {
+}
+
+a, input, button, select {
+    outline: none;
+}
+
+input[placeholder], [placeholder], *[placeholder] {
+    color: #a9a9a9;
+}
+
+.font-s12 {
+    font-size: 12px;
+}
+
+.font-s14 {
+    font-size: 14px;
+}
+
+.font-s16 {
+    font-size: 16px;
+}
+
+.font-s18 {
+    font-size: 18px;
+}
+
+.font-s20 {
+    font-size: 20px;
+}
+
+.font-w700 {
+    font-weight: 700;
+}
+
+.font-w100 {
+    font-weight: 100;
+}
+
+.font-wn {
+    font-weight: normal;
+}
+
+.f-c-r {
+    color: #f00;
+}
+
+.f-c-r a {
+    color: #ff5f1e;
+}
+
+.f-c-w {
+    color: #fff;
+}
+
+.f-c-b {
+    color: #000;
+}
+
+.f-c-h9 {
+    color: #999;
+}
+
+.f-c-h6 {
+    color: #666;
+}
+
+.f-c-h3 {
+    color: #333;
+}
+
+.f-c-1 {
+    color: #f00;
+}
+
+.f-c-2 {
+    color: #f00;
+}
+
+.f-c-3 {
+    color: #f00;
+}
