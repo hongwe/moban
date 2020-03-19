@@ -1,2 +1,68 @@
-.container{}
-.container-fluid{}
+body {
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+        'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+/* 文字色 */
+.textA {
+    color: #303133;
+}
+.textB {
+    color: #606266;
+}
+.textC {
+    color: #909399;
+}
+.textD {
+    color: #c0c4cc;
+}
+/* 边框色 */
+.borderA {
+    border: #dcdfe6;
+}
+.borderB {
+    border: #e4e7ed;
+}
+.borderC {
+    border: #ebeef5;
+}
+.borderD {
+    border: #f2f6fc;
+}
+.baseShadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+.lightShadow {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 边框圆角 */
+.radiusNone {
+    border-radius: 0;
+}
+.radiusSmall {
+    border-radius: 2px;
+}
+.radiusBig {
+    border-radius: 4px;
+}
+.radiusBigger {
+    border-radius: 30px;
+}
+
+/*  辅助色 */
+.bgDefault {
+    background-color: #409eff;
+}
+.bgSuccess {
+    background-color: #67c23a;
+}
+.bgWarning {
+    background-color: #e6a23c;
+}
+.bgDanger {
+    background-color: #f56c6c;
+}
+.bgInfo {
+    background-color: #909399;
+}
