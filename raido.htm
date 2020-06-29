@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label for="r11">
+            <input type="radio" value="0" name="r1" id="r11" />隐藏</label
+        >
+        <label for="r12">
+            <input
+                type="radio"
+                value="1"
+                name="r1"
+                checked="checked"
+                id="r12"
+            />展示</label
+        >
+        <div
+            style="width: 200px; height: 200px; background-color: chartreuse;"
+            class="zsq"
+            style="display: none;"
+        >
+            展示区
+        </div>
+    </body>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('input[name=r1]').change(function () {
+                if (this.value == '0') {
+                    console.log(this.value);
+                    $('.zsq').hide();
+                } else if (this.value == '1') {
+                    console.log(this.value);
+                    $('.zsq').show();
+                }
+            });
+        });
+    </script>
+</html>
