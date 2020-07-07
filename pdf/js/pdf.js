@@ -1,73 +1,82 @@
 $(function () {
-    var index = 1,
-        $pdfBox = $('#pdfbox'),
-        $pdfBoxS = $('#pdfboxs'),
-        $firstBtn = $('#firstbtn'),
-        $lastBtn = $('#lastbtn'),
-        $nextBtn = $('#nextbtn'),
-        $prevBtn = $('#prevbtn'),
-        $curPage = $('#curpage');
+    let index = 1,
+        page = 10,
+        type = 'PNG',
+        c = $('#curpage'),
+        ps = $('#pdfboxs'),
+        p = $('#pdfbox'),
+        b1 = $('#firstbtn'),
+        b2 = $('#prevbtn'),
+        b3 = $('#nextbtn'),
+        b4 = $('#lastbtn');
 
+    function pD(n) {
+        n.prop('disabled', 'disabled');
+    }
+    function rPD(n) {
+        n.removeProp('disabled');
+    }
+    function curPage() {
+        c.html(' 第' + index + '页 / 共' + page + '页');
+        ps.html('<img src="img/pdf' + index + '.' + type + '" />');
+    }
     var imgList = '';
-    var imgUrl = '<img src="img/pdf' + index + '.PNG" />';
 
     for (var i = 1; i <= page; i++) {
-        imgList += '<img src="img/pdf' + i + '.PNG" />';
+        imgList += '<img src="img/pdf' + i + '.' + type + '" />';
     }
 
     if (page == index) {
-        $('button').prop('disabled', 'disabled');
+        pD($('button'));
     }
-    $pdfBox.html(imgList);
-    $pdfBoxS.html(imgUrl);
-    $curPage.html(' 第' + index + '页 / 共' + page + '页');
-    $nextBtn.click(function () {
-        index;
+    p.html(imgList);
+
+    curPage();
+
+    b3.click(function () {
         index++;
-        $pdfBoxS.html('<img src="img/pdf' + index + '.PNG" />');
-        $curPage.html(' 第' + index + '页 / 共' + page + '页');
+        curPage();
         if (index >= page) {
-            $nextBtn.prop('disabled', 'disabled');
-            $lastBtn.prop('disabled', 'disabled');
+            pD(b3);
+            pD(b4);
         } else {
-            $prevBtn.removeProp('disabled');
+            rPD(b2);
         }
         if (index > 1) {
-            $prevBtn.removeProp('disabled');
-            $firstBtn.removeProp('disabled');
+            rPD(b1);
+            rPD(b2);
         }
     });
-    $prevBtn.click(function () {
+
+    b2.click(function () {
         index--;
-        $curPage.html(' 第' + index + '页 / 共' + page + '页');
-        $pdfBoxS.html('<img src="img/pdf' + index + '.PNG" />');
+        curPage();
         if (index < 2) {
-            $prevBtn.prop('disabled', 'disabled');
-            $firstBtn.prop('disabled', 'disabled');
+            pD(b1);
+            pD(b2);
         } else {
-            $prevBtn.removeProp('disabled');
+            rPD(b2);
         }
         if (index < page) {
-            $nextBtn.removeProp('disabled');
-            $lastBtn.removeProp('disabled');
+            rPD(b3);
+            rPD(b4);
         }
     });
-    $firstBtn.click(function () {
+
+    b1.click(function () {
         index = 1;
-        $pdfBoxS.html('<img src="img/pdf' + index + '.PNG" />');
-        $curPage.html(' 第' + index + '页 / 共' + page + '页');
-        $prevBtn.prop('disabled', 'disabled');
-        $firstBtn.prop('disabled', 'disabled');
-        $nextBtn.removeProp('disabled');
-        $lastBtn.removeProp('disabled');
+        curPage();
+        pD(b1);
+        pD(b2);
+        rPD(b3);
+        rPD(b4);
     });
-    $lastBtn.click(function () {
+    b4.click(function () {
         index = page;
-        $pdfBoxS.html('<img src="img/pdf' + index + '.PNG" />');
-        $curPage.html(' 第' + index + '页 / 共' + page + '页');
-        $nextBtn.prop('disabled', 'disabled');
-        $lastBtn.prop('disabled', 'disabled');
-        $prevBtn.removeProp('disabled');
-        $firstBtn.removeProp('disabled');
+        curPage();
+        pD(b3);
+        pD(b4);
+        rPD(b1);
+        rPD(b2);
     });
 });
